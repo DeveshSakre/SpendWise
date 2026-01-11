@@ -71,16 +71,6 @@ com.devesh.spendwise
 └── MainActivity.kt
 
 ---
-
-## 🔐 Permissions Used
- ```xml
-<uses-permission android:name="android.permission.READ_SMS"/>
-<uses-permission android:name="android.permission.RECEIVE_SMS"/>
-
-
-
----
-
 ## ⚠️ Disclaimer
 
 - SMS parsing is bank-dependent and may vary across different banks
@@ -104,4 +94,10 @@ com.devesh.spendwise
 
 **Devesh Sakre**  
 Android Developer | Kotlin | Jetpack Compose
+
+## 🔐 Permissions Used
+ ```xml
+<uses-permission android:name="android.permission.READ_SMS"/>
+<uses-permission android:name="android.permission.RECEIVE_SMS"/>
+
 
