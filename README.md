@@ -73,9 +73,9 @@ com.devesh.spendwise
 ---
 
 ## 🔐 Permissions Used
-- ```xml
--- <uses-permission android:name="android.permission.READ_SMS"/>
--- <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+ ```xml
+<uses-permission android:name="android.permission.READ_SMS"/>
+<uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
 
 
