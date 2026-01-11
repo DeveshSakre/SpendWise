@@ -3,7 +3,7 @@
 SpendWise is a personal expense tracking Android application built using **Kotlin** and **Jetpack Compose**.  
 It allows users to track expenses manually and **automatically detect UPI debit transactions via SMS**.
 
-> ⚠️ This project is built for **personal learning and experimentation**.
+>  This project is built for **personal learning and experimentation**.
 
 ---
 
