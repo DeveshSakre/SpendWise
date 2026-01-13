@@ -97,11 +97,10 @@ Android Developer | Kotlin | Jetpack Compose
 
 ## 📸 Screenshots
 
-<p align="center">
-  <img src="screenshots/expense_list.png" width="260" />
-  <img src="screenshots/add_expense_screen.png" width="260" />
-  <img src="screenshots/add_expense.png" width="260" />
-</p>
+<img width="720" height="1524" alt="addexpense" src="https://github.com/user-attachments/assets/f6da0188-5871-4ff6-a656-59f1a5d38082" />
+<img width="720" height="1524" alt="addexpense_screen" src="https://github.com/user-attachments/assets/d426ec36-b144-4a4f-b49c-da7f8f2fe680" />
+<img width="720" height="1524" alt="expense_list" src="https://github.com/user-attachments/assets/715bd8f6-0f7f-464f-bd79-f3e957874980" />
+
 
 
 
