@@ -98,10 +98,11 @@ Android Developer | Kotlin | Jetpack Compose
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="screenshots/Expense_List.jpeg" width="260" />
-  <img src="screenshots/AddExpense_Screen.jpeg" width="260" />
-  <img src="screenshots/AddExpense.jpeg" width="260" />
+  <img src="screenshots/expense_list.jpg" width="260" />
+  <img src="screenshots/add_expense_screen.jpg" width="260" />
+  <img src="screenshots/add_expense.jpg" width="260" />
 </p>
+
 
 
 ## 🔐 Permissions Used
