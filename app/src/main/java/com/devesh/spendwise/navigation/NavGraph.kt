@@ -5,6 +5,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.devesh.spendwise.ui.add.AddExpenseScreen
+import com.devesh.spendwise.ui.analytics.AnalyticsScreen
+import com.devesh.spendwise.ui.budget.BudgetScreen
 import com.devesh.spendwise.ui.list.ExpenseListScreen
 
 @Composable
@@ -21,6 +23,14 @@ fun NavGraph(navController: NavHostController) {
 
         composable(NavRoutes.ADD_EXPENSE) {
             AddExpenseScreen(navController)
+        }
+
+        composable(NavRoutes.BUDGET) {
+            BudgetScreen(navController)
+        }
+
+        composable(NavRoutes.ANALYTICS) {
+            AnalyticsScreen(navController)
         }
     }
 }
