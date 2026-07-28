@@ -246,21 +246,27 @@ com.devesh.spendwise
 # 📸 Screenshots
 
 <p align="center">
-
-<img src="screenshots/HomeScreen.png" width="250"/>
-
-<img src="screenshots/AddExpense.png" width="250"/>
-
-<img src="screenshots/Analytics.png" width="250"/>
-
-<img src="screenshots/Budget.png" width="250"/>
-
-<img src="screenshots/Search.png" width="250"/>
-
-<img src="screenshots/AIInsights.png" width="250"/>
-
+  <img src="screenshots/HomeScreen.jpg" width="250"/>
+  <img src="screenshots/HomeScreen_1.jpg" width="250"/>
+  <img src="screenshots/AddExpense.jpg" width="250"/>
 </p>
 
+<p align="center">
+  <img src="screenshots/Analytics.jpg" width="250"/>
+  <img src="screenshots/Analytics_1.jpg" width="250"/>
+  <img src="screenshots/Budget.jpg" width="250"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/Budget_1.jpg" width="250"/>
+  <img src="screenshots/Search.jpg" width="250"/>
+  <img src="screenshots/Set%20Budget.jpg" width="250"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/AIAssistant.jpg" width="250"/>
+  <img src="screenshots/Widget.jpg" width="420"/>
+</p>
 ---
 
 # 🚀 Getting Started
