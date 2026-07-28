@@ -1,129 +1,141 @@
 # 💰 SpendWise
 
+![Kotlin](https://img.shields.io/badge/Kotlin-2.1-purple?logo=kotlin&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?logo=jetpackcompose&logoColor=white)
+![Android](https://img.shields.io/badge/Android-15-3DDC84?logo=android&logoColor=white)
+![Room Database](https://img.shields.io/badge/Room-Database-FF9800)
+![MVVM](https://img.shields.io/badge/Architecture-MVVM-2196F3)
+![Material 3](https://img.shields.io/badge/UI-Material%203-6200EE)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 <p align="center">
-  <img src="screenshots/logo.png" width="120" alt="SpendWise Logo"/>
+  <b>A modern AI-powered personal finance and expense tracking application built with Kotlin, Jetpack Compose and Material Design 3.</b>
 </p>
 
 <p align="center">
-  <b>A Modern AI-Powered Personal Finance & Expense Tracker built with Kotlin, Jetpack Compose and Material 3.</b>
-</p>
-
-<p align="center">
-  Track expenses automatically, manage budgets, analyse spending patterns, generate monthly reports and gain intelligent financial insights — all with a beautiful native Android experience.
+Track expenses automatically through UPI SMS detection, manage monthly budgets, analyse spending habits, generate financial reports and gain AI-powered insights — all in a beautiful native Android experience.
 </p>
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-### 💸 Expense Management
+## 💸 Expense Management
 
-- Add, edit and delete expenses
-- View complete expense details
-- Categorise expenses
-- Support for UPI, Cash and Card payments
-- Manual and automatic expense tracking
+- Add, Edit & Delete Expenses
+- Expense Details Screen
+- Manual Expense Entry
+- Category Management
+- Multiple Payment Methods (UPI, Cash, Card)
+- Merchant Notes
+- Real-time Expense Updates
 
 ---
 
-### 📩 Automatic UPI SMS Detection
+## 📩 Automatic UPI SMS Detection
 
-- Detects UPI debit SMS automatically
-- Extracts:
+- Automatically detects UPI debit transactions
+- Parses SMS locally on the device
+- Detects:
   - Amount
-  - Merchant / Receiver
+  - Merchant
   - Payment Method
-  - Date
+  - Transaction Date
 - Automatically creates expense entries
 - Intelligent merchant categorisation
-- Works completely offline
+- Completely offline processing
 
 ---
 
-### 🎯 Budget Management
+## 🎯 Budget Management
 
-- Monthly budget planning
-- Category-wise budgets
-- Budget utilisation tracking
-- Remaining budget calculation
-- Budget progress indicators
-- Smart budget status
-
----
-
-### 📊 Analytics Dashboard
-
-- Monthly spending overview
-- Category-wise spending
-- Budget utilisation
-- Spending trends
-- Top merchants
-- Highest spending categories
-- Interactive charts and visualisations
+- Monthly Budget Planning
+- Category-wise Budgets
+- Budget Utilisation Tracking
+- Remaining Budget Calculation
+- Budget Progress Indicators
+- Budget Status Monitoring
 
 ---
 
-### 🤖 AI Financial Insights
+## 📊 Analytics Dashboard
 
-Generate intelligent insights from your spending history:
-
-- Spending trends
-- Budget analysis
-- Highest spending category
-- Most visited merchant
-- Average daily spending
-- Budget predictions
-- Financial recommendations
+- Monthly Spending Overview
+- Category-wise Analysis
+- Budget Utilisation
+- Spending Trends
+- Top Spending Categories
+- Top Merchants
+- Interactive Charts
+- Financial Statistics
 
 ---
 
-### 💬 AI Financial Assistant
+## 🤖 AI Financial Insights
+
+Generate intelligent insights using local expense data.
+
+Examples:
+
+- Spending Trends
+- Budget Analysis
+- Highest Spending Category
+- Average Daily Spending
+- Most Frequent Merchant
+- Spending Behaviour Analysis
+- Budget Predictions
+- Financial Recommendations
+
+---
+
+## 💬 AI Financial Assistant
 
 Offline AI-powered financial assistant capable of answering questions like:
 
 - How much did I spend this month?
-- What is my remaining budget?
 - Which category has the highest spending?
-- Show my Food expenses.
+- Show my food expenses.
+- What is my remaining budget?
 - Show expenses above ₹1000.
+- Which merchant did I spend the most at?
 
 ---
 
-### 📄 Monthly Financial Reports
+## 📄 Monthly Financial Reports
 
-Generate detailed monthly reports including:
+Generate comprehensive monthly reports including:
 
-- Total spending
-- Budget
-- Remaining balance
-- Category breakdown
-- Top merchants
-- Highest transaction
-- Average daily spending
-- AI summary
+- Total Spending
+- Monthly Budget
+- Remaining Budget
+- Category Breakdown
+- Top Merchant
+- Highest Expense
+- Average Daily Spending
+- AI Summary
 
-Export reports as:
+Export Reports as:
 
 - PDF
 - CSV
 
 ---
 
-### 🔍 Search & Smart Filters
+## 🔍 Search & Smart Filters
 
-Search expenses by:
+Search Expenses by:
 
 - Merchant
 - Notes
 - Category
 - Payment Method
 
-Advanced filters:
+Advanced Filters:
 
 - Today
 - This Week
 - This Month
-- Custom Date
+- Custom Date Range
 - Highest Amount
 - Lowest Amount
 - Newest
@@ -131,37 +143,37 @@ Advanced filters:
 
 ---
 
-### 🏠 Android Home Screen Widget
+## 🏠 Android Home Screen Widget
 
-Quickly access your financial summary directly from the home screen.
+Quickly view financial information directly from your Home Screen.
 
 Displays:
 
-- Current month spending
-- Remaining budget
-- Budget progress
+- Monthly Spending
+- Remaining Budget
+- Budget Progress
 - Quick Add Expense
-- Analytics shortcut
+- Analytics Shortcut
 
 ---
 
-## 🏗 Architecture
+# 🏗 Architecture
 
 ```
-MVVM Architecture
+                 MVVM Architecture
 
-UI (Jetpack Compose)
-        │
-ViewModel
-        │
-Repository
-        │
-Room Database
+        UI (Jetpack Compose)
+                 │
+             ViewModel
+                 │
+            Repository
+                 │
+          Room Database
 ```
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 com.devesh.spendwise
@@ -194,7 +206,7 @@ com.devesh.spendwise
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
 ### Language
 
@@ -220,450 +232,123 @@ com.devesh.spendwise
 ### Android Components
 
 - Broadcast Receiver
-- Home Screen Widget
-- SMS Manager
-- App Widgets
+- SMS Receiver
+- Android Home Screen Widget
 
 ### Development Tools
 
 - Android Studio
 - Stitch (UI Design)
-- Antigravity (AI-assisted Development)
+- Antigravity (AI-Assisted Development)
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshots
 
 <p align="center">
 
-<img src="screenshots/HomeScreen.png" width="260"/>
+<img src="screenshots/HomeScreen.png" width="250"/>
 
-<img src="screenshots/AddExpense.png" width="260"/>
+<img src="screenshots/AddExpense.png" width="250"/>
 
-<img src="screenshots/Analytics.png" width="260"/>
+<img src="screenshots/Analytics.png" width="250"/>
 
-<img src="screenshots/Budget.png" width="260"/>
+<img src="screenshots/Budget.png" width="250"/>
 
-<img src="screenshots/Search.png" width="260"/>
+<img src="screenshots/Search.png" width="250"/>
 
-<img src="screenshots/AIInsights.png" width="260"/>
+<img src="screenshots/AIInsights.png" width="250"/>
 
 </p>
 
 ---
 
-## 🚀 Installation
+# 🚀 Getting Started
 
-Clone the repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/DeveshSakre/SpendWise.git
 ```
 
-Open the project in Android Studio.
+### Open Project
 
-Build and Run on an Android device.
+Open the project using Android Studio.
 
----
+### Run
 
-## 📌 Permissions
-
-SpendWise uses the following Android permissions:
-
-- RECEIVE_SMS
-- READ_SMS
-
-These permissions are used only for automatic UPI transaction detection.
+Build and run on an Android device or emulator.
 
 ---
 
-## ⚠ Disclaimer
+# 📱 Minimum Requirements
 
-This project is intended for educational and personal-use purposes.
-
-Automatic SMS parsing depends on the SMS format provided by different banks and payment providers.
-
-Google Play currently restricts SMS permissions for general-purpose finance apps, so this implementation is designed for learning and personal use.
-
----
-
-## 🚀 Future Enhancements
-
-- Better merchant recognition
-- Subscription detection
-- Savings goals
-- Financial health score
-- Material You improvements
-- Cloud backup
-- Multi-device sync
-- Voice expense entry
-- OCR receipt scanning
-- Wear OS companion app
-
----
-
-## 🤝 Contributing
-
-Contributions, suggestions and feature requests are always welcome.
-
-Feel free to fork the repository and submit a Pull Request.
-
----
-
-## ⭐ Support
-
-If you found this project useful, please consider giving it a ⭐ on GitHub.
-
-It helps the project reach more developers.
-
----
-
-## 👨‍💻 Author
-
-**Devesh Sakre**
-
-Android Developer | Kotlin | Jetpack Compose | AI Enthusiast
-
-GitHub:
-https://github.com/DeveshSakre
-
----
-
-<p align="center">
-Made with ❤️ using Kotlin, Jetpack Compose and Android.
-</p>
-
-# 💰 SpendWise
-
-<p align="center">
-  <img src="screenshots/logo.png" width="120" alt="SpendWise Logo"/>
-</p>
-
-<p align="center">
-  <b>A Modern AI-Powered Personal Finance & Expense Tracker built with Kotlin, Jetpack Compose and Material 3.</b>
-</p>
-
-<p align="center">
-  Track expenses automatically, manage budgets, analyse spending patterns, generate monthly reports and gain intelligent financial insights — all with a beautiful native Android experience.
-</p>
-
----
-
-## ✨ Features
-
-### 💸 Expense Management
-
-- Add, edit and delete expenses
-- View complete expense details
-- Categorise expenses
-- Support for UPI, Cash and Card payments
-- Manual and automatic expense tracking
-
----
-
-### 📩 Automatic UPI SMS Detection
-
-- Detects UPI debit SMS automatically
-- Extracts:
-  - Amount
-  - Merchant / Receiver
-  - Payment Method
-  - Date
-- Automatically creates expense entries
-- Intelligent merchant categorisation
-- Works completely offline
-
----
-
-### 🎯 Budget Management
-
-- Monthly budget planning
-- Category-wise budgets
-- Budget utilisation tracking
-- Remaining budget calculation
-- Budget progress indicators
-- Smart budget status
-
----
-
-### 📊 Analytics Dashboard
-
-- Monthly spending overview
-- Category-wise spending
-- Budget utilisation
-- Spending trends
-- Top merchants
-- Highest spending categories
-- Interactive charts and visualisations
-
----
-
-### 🤖 AI Financial Insights
-
-Generate intelligent insights from your spending history:
-
-- Spending trends
-- Budget analysis
-- Highest spending category
-- Most visited merchant
-- Average daily spending
-- Budget predictions
-- Financial recommendations
-
----
-
-### 💬 AI Financial Assistant
-
-Offline AI-powered financial assistant capable of answering questions like:
-
-- How much did I spend this month?
-- What is my remaining budget?
-- Which category has the highest spending?
-- Show my Food expenses.
-- Show expenses above ₹1000.
-
----
-
-### 📄 Monthly Financial Reports
-
-Generate detailed monthly reports including:
-
-- Total spending
-- Budget
-- Remaining balance
-- Category breakdown
-- Top merchants
-- Highest transaction
-- Average daily spending
-- AI summary
-
-Export reports as:
-
-- PDF
-- CSV
-
----
-
-### 🔍 Search & Smart Filters
-
-Search expenses by:
-
-- Merchant
-- Notes
-- Category
-- Payment Method
-
-Advanced filters:
-
-- Today
-- This Week
-- This Month
-- Custom Date
-- Highest Amount
-- Lowest Amount
-- Newest
-- Oldest
-
----
-
-### 🏠 Android Home Screen Widget
-
-Quickly access your financial summary directly from the home screen.
-
-Displays:
-
-- Current month spending
-- Remaining budget
-- Budget progress
-- Quick Add Expense
-- Analytics shortcut
-
----
-
-## 🏗 Architecture
-
-```
-MVVM Architecture
-
-UI (Jetpack Compose)
-        │
-ViewModel
-        │
-Repository
-        │
-Room Database
-```
-
----
-
-## 📂 Project Structure
-
-```
-com.devesh.spendwise
-│
-├── data
-│   ├── local
-│   ├── repository
-│
-├── navigation
-│
-├── sms
-│
-├── util
-│
-├── widget
-│
-├── ui
-│   ├── add
-│   ├── analytics
-│   ├── assistant
-│   ├── budget
-│   ├── details
-│   ├── list
-│   ├── reports
-│   ├── search
-│   └── theme
-│
-└── MainActivity.kt
-```
-
----
-
-## 🛠 Tech Stack
-
-### Language
-
+- Android 8.0 (API 26) or above
 - Kotlin
-
-### UI
-
-- Jetpack Compose
-- Material Design 3
-- Navigation Compose
-
-### Architecture
-
-- MVVM
-- Repository Pattern
-- StateFlow
-- Kotlin Coroutines
-
-### Database
-
-- Room Database
-
-### Android Components
-
-- Broadcast Receiver
-- Home Screen Widget
-- SMS Manager
-- App Widgets
-
-### Development Tools
-
-- Android Studio
-- Stitch (UI Design)
-- Antigravity (AI-assisted Development)
+- Android Studio Narwhal or newer
 
 ---
 
-## 📸 Screenshots
+# 🔐 Permissions
 
-<p align="center">
-
-<img src="screenshots/HomeScreen.png" width="260"/>
-
-<img src="screenshots/AddExpense.png" width="260"/>
-
-<img src="screenshots/Analytics.png" width="260"/>
-
-<img src="screenshots/Budget.png" width="260"/>
-
-<img src="screenshots/Search.png" width="260"/>
-
-<img src="screenshots/AIInsights.png" width="260"/>
-
-</p>
-
----
-
-## 🚀 Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/DeveshSakre/SpendWise.git
-```
-
-Open the project in Android Studio.
-
-Build and Run on an Android device.
-
----
-
-## 📌 Permissions
-
-SpendWise uses the following Android permissions:
+SpendWise requires:
 
 - RECEIVE_SMS
 - READ_SMS
 
-These permissions are used only for automatic UPI transaction detection.
+These permissions are used only for automatic UPI expense detection.
 
 ---
 
-## ⚠ Disclaimer
+# ⚠ Disclaimer
 
-This project is intended for educational and personal-use purposes.
-
-Automatic SMS parsing depends on the SMS format provided by different banks and payment providers.
-
-Google Play currently restricts SMS permissions for general-purpose finance apps, so this implementation is designed for learning and personal use.
+- SMS parsing depends on the transaction message format used by different banks and payment providers.
+- This project is intended for educational and personal use.
+- Automatic SMS reading may not comply with Google Play policies for general-purpose finance applications.
 
 ---
 
-## 🚀 Future Enhancements
+# 🚀 Future Enhancements
 
-- Better merchant recognition
-- Subscription detection
-- Savings goals
-- Financial health score
-- Material You improvements
-- Cloud backup
-- Multi-device sync
-- Voice expense entry
-- OCR receipt scanning
-- Wear OS companion app
-
----
-
-## 🤝 Contributing
-
-Contributions, suggestions and feature requests are always welcome.
-
-Feel free to fork the repository and submit a Pull Request.
+- Financial Health Score
+- Savings Goals
+- Better Merchant Recognition
+- Subscription Detection
+- Material You Improvements
+- Voice Expense Entry
+- OCR Receipt Scanner
+- Wear OS Companion
+- Local Backup & Restore
+- Cloud Synchronisation
 
 ---
 
-## ⭐ Support
+# 🤝 Contributing
 
-If you found this project useful, please consider giving it a ⭐ on GitHub.
+Contributions, feature suggestions and pull requests are welcome.
+
+If you have ideas to improve SpendWise, feel free to fork the repository and submit a Pull Request.
+
+---
+
+# ⭐ Support
+
+If you like this project, please consider giving it a **⭐ Star** on GitHub.
 
 It helps the project reach more developers.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Devesh Sakre**
+### **Devesh Sakre**
 
-Android Developer | Kotlin | Jetpack Compose | AI Enthusiast
+Android Developer • Kotlin • Jetpack Compose • AI Enthusiast
 
-GitHub:
-https://github.com/DeveshSakre
+GitHub: https://github.com/DeveshSakre
 
 ---
 
 <p align="center">
-Made with ❤️ using Kotlin, Jetpack Compose and Android.
+Made with ❤️ using Kotlin, Jetpack Compose and Material Design 3.
 </p>
