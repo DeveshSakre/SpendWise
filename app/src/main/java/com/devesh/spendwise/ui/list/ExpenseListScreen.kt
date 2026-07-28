@@ -32,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.foundation.clickable
 import com.devesh.spendwise.data.local.AppDatabase
 import com.devesh.spendwise.data.local.ExpenseEntity
@@ -233,108 +234,97 @@ fun SpendWiseTopBar(
     onSearchClick: (() -> Unit)? = null,
     onAssistantClick: (() -> Unit)? = null
 ) {
-    TopAppBar(
-        title = {
-            Text(
-                text = "SpendWise",
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-                color = StitchColors.OnSurface,
-                letterSpacing = (-0.5).sp
-            )
-        },
-        actions = {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(StitchColors.Background)
+            .windowInsetsPadding(WindowInsets.statusBars)
+            .height(64.dp)
+            .padding(horizontal = 24.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Logo / Brand Title - Guaranteed Single Line without truncation
+        Text(
+            text = "SpendWise",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            color = StitchColors.OnSurface,
+            maxLines = 1,
+            softWrap = false
+        )
+
+        Spacer(Modifier.weight(1f))
+
+        // Action Icons Row with Equal Spacing and Perfect Vertical Alignment
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
             if (onSearchClick != null) {
-                IconButton(onClick = onSearchClick) {
-                    Box(
-                        modifier = Modifier
-                            .size(36.dp)
-                            .background(StitchColors.PrimaryContainer.copy(alpha = 0.15f), CircleShape),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Search,
-                            contentDescription = "Search",
-                            tint = StitchColors.Primary,
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
-                }
+                HeaderIcon(
+                    icon = Icons.Default.Search,
+                    contentDescription = "Search",
+                    onClick = onSearchClick
+                )
             }
 
             if (onAssistantClick != null) {
-                IconButton(onClick = onAssistantClick) {
-                    Box(
-                        modifier = Modifier
-                            .size(36.dp)
-                            .background(StitchColors.PrimaryContainer.copy(alpha = 0.15f), CircleShape),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.AutoAwesome,
-                            contentDescription = "AI Assistant",
-                            tint = StitchColors.Primary,
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
-                }
+                HeaderIcon(
+                    icon = Icons.Default.AutoAwesome,
+                    contentDescription = "AI Assistant",
+                    onClick = onAssistantClick
+                )
             }
 
             if (onAnalyticsClick != null) {
-                IconButton(onClick = onAnalyticsClick) {
-                    Box(
-                        modifier = Modifier
-                            .size(36.dp)
-                            .background(StitchColors.PrimaryContainer.copy(alpha = 0.15f), CircleShape),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Analytics,
-                            contentDescription = "Analytics",
-                            tint = StitchColors.Primary,
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
-                }
+                HeaderIcon(
+                    icon = Icons.Default.Analytics,
+                    contentDescription = "Analytics",
+                    onClick = onAnalyticsClick
+                )
             }
 
             if (onBudgetClick != null) {
-                IconButton(onClick = onBudgetClick) {
-                    Box(
-                        modifier = Modifier
-                            .size(36.dp)
-                            .background(StitchColors.PrimaryContainer.copy(alpha = 0.15f), CircleShape),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.AccountBalanceWallet,
-                            contentDescription = "Budget",
-                            tint = StitchColors.Primary,
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
-                }
-            }
-
-            Box(
-                modifier = Modifier
-                    .padding(start = 4.dp, end = 16.dp)
-                    .size(36.dp)
-                    .background(StitchColors.Primary, CircleShape),
-                contentAlignment = Alignment.Center
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Person,
-                    contentDescription = "Profile",
-                    tint = Color.White,
-                    modifier = Modifier.size(20.dp)
+                HeaderIcon(
+                    icon = Icons.Default.AccountBalanceWallet,
+                    contentDescription = "Budget",
+                    onClick = onBudgetClick
                 )
             }
-        },
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = StitchColors.Background
+
+            // Profile Action Button
+            HeaderIcon(
+                icon = Icons.Default.Person,
+                contentDescription = "Profile",
+                isFilled = true,
+                onClick = {}
+            )
+        }
+    }
+}
+
+@Composable
+private fun HeaderIcon(
+    icon: ImageVector,
+    contentDescription: String,
+    isFilled: Boolean = false,
+    onClick: () -> Unit
+) {
+    Box(
+        modifier = Modifier
+            .size(36.dp)
+            .clip(CircleShape)
+            .background(if (isFilled) StitchColors.Primary else StitchColors.PrimaryContainer.copy(alpha = 0.15f))
+            .clickable(onClick = onClick),
+        contentAlignment = Alignment.Center
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = contentDescription,
+            tint = if (isFilled) Color.White else StitchColors.Primary,
+            modifier = Modifier.size(18.dp)
         )
-    )
+    }
 }
 
 @Composable
