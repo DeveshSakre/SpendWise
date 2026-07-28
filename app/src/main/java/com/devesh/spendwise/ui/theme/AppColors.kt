@@ -14,6 +14,10 @@ object StitchColors {
     val Secondary = Color(0xFF632CE5)
     val SecondaryContainer = Color(0xFF7C4DFF)
     val Tertiary = Color(0xFF904400)
+    val TertiaryContainer = Color(0xFFFFDBC8)
+    val Error = Color(0xFFBA1A1A)
+    val ErrorContainer = Color(0xFFFFDAD6)
+    val OnErrorContainer = Color(0xFF93000A)
     val Background = Color(0xFFFCF8FF)
     val SurfaceContainerLow = Color(0xFFF5F2FE)
     val SurfaceContainerLowest = Color(0xFFFFFFFF)
@@ -22,5 +26,6 @@ object StitchColors {
     val SurfaceContainerHighest = Color(0xFFE4E1ED)
     val OnSurface = Color(0xFF1B1B23)
     val OnSurfaceVariant = Color(0xFF464555)
+    val Outline = Color(0xFF767586)
     val OutlineVariant = Color(0xFFC6C5D7)
 }

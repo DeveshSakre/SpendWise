@@ -110,7 +110,9 @@ fun ExpenseListScreen(navController: NavController) {
         topBar = {
             SpendWiseTopBar(
                 onBudgetClick = { navController.navigate(NavRoutes.BUDGET) },
-                onAnalyticsClick = { navController.navigate(NavRoutes.ANALYTICS) }
+                onAnalyticsClick = { navController.navigate(NavRoutes.ANALYTICS) },
+                onSearchClick = { navController.navigate(NavRoutes.SEARCH) },
+                onAssistantClick = { navController.navigate(NavRoutes.AI_ASSISTANT) }
             )
         },
 
@@ -141,6 +143,16 @@ fun ExpenseListScreen(navController: NavController) {
                 )
             }
 
+            item {
+                Spacer(Modifier.height(12.dp))
+                QuickModuleActionsRow(
+                    onSearchClick = { navController.navigate(NavRoutes.SEARCH) },
+                    onAssistantClick = { navController.navigate(NavRoutes.AI_ASSISTANT) },
+                    onInsightsClick = { navController.navigate(NavRoutes.AI_INSIGHTS) },
+                    onReportsClick = { navController.navigate(NavRoutes.MONTHLY_REPORTS) }
+                )
+            }
+
 
             if (todayExpenses.isNotEmpty()) {
                 item {
@@ -153,7 +165,8 @@ fun ExpenseListScreen(navController: NavController) {
                     SwipeExpenseItem(
                         expense = expense,
                         viewModel = viewModel,
-                        onDelete = { recentlyDeleted = it }
+                        onDelete = { recentlyDeleted = it },
+                        onClick = { navController.navigate(NavRoutes.expenseDetailsRoute(expense.id)) }
                     )
                 }
             }
@@ -169,7 +182,8 @@ fun ExpenseListScreen(navController: NavController) {
                     SwipeExpenseItem(
                         expense = expense,
                         viewModel = viewModel,
-                        onDelete = { recentlyDeleted = it }
+                        onDelete = { recentlyDeleted = it },
+                        onClick = { navController.navigate(NavRoutes.expenseDetailsRoute(expense.id)) }
                     )
                 }
             }
@@ -185,7 +199,8 @@ fun ExpenseListScreen(navController: NavController) {
                     SwipeExpenseItem(
                         expense = expense,
                         viewModel = viewModel,
-                        onDelete = { recentlyDeleted = it }
+                        onDelete = { recentlyDeleted = it },
+                        onClick = { navController.navigate(NavRoutes.expenseDetailsRoute(expense.id)) }
                     )
                 }
             }
@@ -214,7 +229,9 @@ fun ExpenseListScreen(navController: NavController) {
 @Composable
 fun SpendWiseTopBar(
     onBudgetClick: (() -> Unit)? = null,
-    onAnalyticsClick: (() -> Unit)? = null
+    onAnalyticsClick: (() -> Unit)? = null,
+    onSearchClick: (() -> Unit)? = null,
+    onAssistantClick: (() -> Unit)? = null
 ) {
     TopAppBar(
         title = {
@@ -227,6 +244,42 @@ fun SpendWiseTopBar(
             )
         },
         actions = {
+            if (onSearchClick != null) {
+                IconButton(onClick = onSearchClick) {
+                    Box(
+                        modifier = Modifier
+                            .size(36.dp)
+                            .background(StitchColors.PrimaryContainer.copy(alpha = 0.15f), CircleShape),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Search,
+                            contentDescription = "Search",
+                            tint = StitchColors.Primary,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                }
+            }
+
+            if (onAssistantClick != null) {
+                IconButton(onClick = onAssistantClick) {
+                    Box(
+                        modifier = Modifier
+                            .size(36.dp)
+                            .background(StitchColors.PrimaryContainer.copy(alpha = 0.15f), CircleShape),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.AutoAwesome,
+                            contentDescription = "AI Assistant",
+                            tint = StitchColors.Primary,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                }
+            }
+
             if (onAnalyticsClick != null) {
                 IconButton(onClick = onAnalyticsClick) {
                     Box(
@@ -282,6 +335,87 @@ fun SpendWiseTopBar(
             containerColor = StitchColors.Background
         )
     )
+}
+
+@Composable
+fun QuickModuleActionsRow(
+    onSearchClick: () -> Unit,
+    onAssistantClick: () -> Unit,
+    onInsightsClick: () -> Unit,
+    onReportsClick: () -> Unit
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        QuickModuleActionCard(
+            modifier = Modifier.weight(1f),
+            label = "Search",
+            icon = Icons.Default.Search,
+            onClick = onSearchClick
+        )
+        QuickModuleActionCard(
+            modifier = Modifier.weight(1f),
+            label = "Assistant",
+            icon = Icons.Default.AutoAwesome,
+            onClick = onAssistantClick
+        )
+        QuickModuleActionCard(
+            modifier = Modifier.weight(1f),
+            label = "Insights",
+            icon = Icons.Default.Lightbulb,
+            onClick = onInsightsClick
+        )
+        QuickModuleActionCard(
+            modifier = Modifier.weight(1f),
+            label = "Reports",
+            icon = Icons.Default.Description,
+            onClick = onReportsClick
+        )
+    }
+}
+
+@Composable
+fun QuickModuleActionCard(
+    modifier: Modifier = Modifier,
+    label: String,
+    icon: ImageVector,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = modifier.clickable { onClick() },
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = StitchColors.SurfaceContainerLowest),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 12.dp, horizontal = 4.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(36.dp)
+                    .background(StitchColors.PrimaryContainer.copy(alpha = 0.12f), CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = icon,
+                    contentDescription = label,
+                    tint = StitchColors.Primary,
+                    modifier = Modifier.size(18.dp)
+                )
+            }
+            Text(
+                text = label,
+                fontSize = 11.sp,
+                fontWeight = FontWeight.Bold,
+                color = StitchColors.OnSurface
+            )
+        }
+    }
 }
 
 
@@ -444,7 +578,8 @@ fun DateGroupHeader(title: String, badgeText: String? = null) {
 fun SwipeExpenseItem(
     expense: ExpenseEntity,
     viewModel: ExpenseListViewModel,
-    onDelete: (ExpenseEntity) -> Unit
+    onDelete: (ExpenseEntity) -> Unit,
+    onClick: () -> Unit = {}
 ) {
     val dismissState = rememberDismissState(
         confirmStateChange = { dismissValue ->
@@ -480,16 +615,20 @@ fun SwipeExpenseItem(
             }
         },
         dismissContent = {
-            ExpenseItemCard(expense)
+            ExpenseItemCard(expense = expense, onClick = onClick)
         }
     )
 }
 
 @Composable
-fun ExpenseItemCard(expense: ExpenseEntity) {
+fun ExpenseItemCard(
+    expense: ExpenseEntity,
+    onClick: () -> Unit = {}
+) {
     Card(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .clickable { onClick() },
         shape = RoundedCornerShape(24.dp),
         colors = CardDefaults.cardColors(containerColor = StitchColors.SurfaceContainerLowest),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
