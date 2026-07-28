@@ -218,7 +218,7 @@ fun EditExpenseScreen(
                 // Action Buttons
                 ActionButtonsSection(
                     onSaveClick = {
-                        viewModel.saveExpense {
+                        viewModel.saveExpense(context) {
                             navController.popBackStack()
                         }
                     },
@@ -239,7 +239,7 @@ fun EditExpenseScreen(
                 Button(
                     onClick = {
                         showDeleteDialog = false
-                        viewModel.deleteExpense {
+                        viewModel.deleteExpense(context) {
                             navController.navigate(NavRoutes.EXPENSE_LIST) {
                                 popUpTo(NavRoutes.EXPENSE_LIST) { inclusive = true }
                             }

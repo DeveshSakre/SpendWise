@@ -81,15 +81,21 @@ class BudgetViewModel(
         initialValue = emptyList()
     )
 
-    fun saveBudget(budget: BudgetEntity) {
+    fun saveBudget(budget: BudgetEntity, context: android.content.Context? = null) {
         viewModelScope.launch {
             budgetRepository.saveBudget(budget)
+            if (context != null && android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
+                com.devesh.spendwise.widget.WidgetUpdater.updateWidget(context.applicationContext)
+            }
         }
     }
 
-    fun updateBudget(budget: BudgetEntity) {
+    fun updateBudget(budget: BudgetEntity, context: android.content.Context? = null) {
         viewModelScope.launch {
             budgetRepository.updateBudget(budget)
+            if (context != null && android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
+                com.devesh.spendwise.widget.WidgetUpdater.updateWidget(context.applicationContext)
+            }
         }
     }
 

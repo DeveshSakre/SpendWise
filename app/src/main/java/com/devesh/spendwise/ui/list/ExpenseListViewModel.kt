@@ -13,16 +13,22 @@ class ExpenseListViewModel(
 
     val expenses = repository.getAllExpenses().asLiveData()
 
-    fun deleteExpense(expense: ExpenseEntity) {
+    fun deleteExpense(expense: ExpenseEntity, context: android.content.Context? = null) {
         viewModelScope.launch {
             repository.deleteExpense(expense)
+            if (context != null && android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
+                com.devesh.spendwise.widget.WidgetUpdater.updateWidget(context.applicationContext)
+            }
         }
     }
 
     // ✅ REQUIRED FOR UNDO
-    fun addExpense(expense: ExpenseEntity) {
+    fun addExpense(expense: ExpenseEntity, context: android.content.Context? = null) {
         viewModelScope.launch {
             repository.insertExpense(expense)
+            if (context != null && android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
+                com.devesh.spendwise.widget.WidgetUpdater.updateWidget(context.applicationContext)
+            }
         }
     }
 }

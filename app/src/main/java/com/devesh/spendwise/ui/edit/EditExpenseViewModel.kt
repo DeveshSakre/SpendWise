@@ -75,7 +75,7 @@ class EditExpenseViewModel(
         _date.value = newDate
     }
 
-    fun saveExpense(onSuccess: () -> Unit) {
+    fun saveExpense(context: android.content.Context? = null, onSuccess: () -> Unit) {
         val parsedAmount = _amount.value.toDoubleOrNull()
         if (parsedAmount == null || parsedAmount <= 0.0) {
             _errorMessage.value = "Please enter a valid amount greater than 0"
@@ -95,14 +95,20 @@ class EditExpenseViewModel(
 
         viewModelScope.launch {
             repository.updateExpense(updated)
+            if (context != null && android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
+                com.devesh.spendwise.widget.WidgetUpdater.updateWidget(context.applicationContext)
+            }
             onSuccess()
         }
     }
 
-    fun deleteExpense(onDeleted: () -> Unit) {
+    fun deleteExpense(context: android.content.Context? = null, onDeleted: () -> Unit) {
         val currentExpense = _expense.value ?: return
         viewModelScope.launch {
             repository.deleteExpense(currentExpense)
+            if (context != null && android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
+                com.devesh.spendwise.widget.WidgetUpdater.updateWidget(context.applicationContext)
+            }
             onDeleted()
         }
     }

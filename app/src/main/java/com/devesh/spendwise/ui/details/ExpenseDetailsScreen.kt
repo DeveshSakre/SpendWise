@@ -180,7 +180,7 @@ fun ExpenseDetailsScreen(
                 Button(
                     onClick = {
                         showDeleteDialog = false
-                        viewModel.deleteExpense {
+                        viewModel.deleteExpense(context) {
                             navController.popBackStack()
                         }
                     },

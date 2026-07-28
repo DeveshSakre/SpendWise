@@ -413,7 +413,7 @@ fun AddExpenseScreen(navController: NavController) {
             // Save Expense Action Button
             Button(
                 onClick = {
-                    viewModel.saveExpense()
+                    viewModel.saveExpense(context)
                     navController.navigate(NavRoutes.EXPENSE_LIST) {
                         popUpTo(NavRoutes.ADD_EXPENSE) { inclusive = true }
                     }

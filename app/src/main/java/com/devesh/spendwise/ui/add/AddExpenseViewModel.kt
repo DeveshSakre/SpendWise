@@ -35,7 +35,7 @@ class AddExpenseViewModel(
         note.value = value
     }
 
-    fun saveExpense() {
+    fun saveExpense(context: android.content.Context? = null) {
         if (amount.value.isBlank()) return
 
         val expense = ExpenseEntity(
@@ -46,9 +46,11 @@ class AddExpenseViewModel(
             date = System.currentTimeMillis()
         )
 
-
         viewModelScope.launch {
             repository.insertExpense(expense)
+            if (context != null && android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
+                com.devesh.spendwise.widget.WidgetUpdater.updateWidget(context.applicationContext)
+            }
         }
     }
 }
